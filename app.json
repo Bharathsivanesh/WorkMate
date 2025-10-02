@@ -1,17 +1,31 @@
 {
   "expo": {
-    "name": "MyWebWrapperApp",
+    "name": "WorkMate",
     "slug": "MyWebWrapperApp",
     "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "mywebwrapperapp",
+    "scheme": "WorkMate",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.bharath.WorkMate",
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "This app uses your location to show nearby services.",
+        "NSLocationAlwaysUsageDescription": "This app needs access to your location even in the background."
+      }
     },
     "android": {
+      "package": "com.bharath.WorkMate",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ],
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -23,7 +37,7 @@
     },
     "web": {
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/icon.png"
     },
     "plugins": [
       "expo-router",
@@ -43,6 +57,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "c6bbd57d-503c-4bc9-af58-3bdf20dbefe1"
+      }
+    },
+    "owner": "bharath2005"
   }
 }
